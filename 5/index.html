@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naše spomienky ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+    .card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      pointer-events: none;
+    }
+    .card.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .circle {
+      background: white;
+      color: black;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 80%;
+      max-height: 50%;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transform: scale(0.95);
+      transition: transform 0.6s ease;
+    }
+    .card.active img {
+      transform: scale(1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.8);
+      color: black;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: white;
+    }
+
+    /* malé späť tlačidlo dole */
+    .back-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      padding: 5px 10px;
+      background: rgba(255,255,255,0.5);
+    }
+    .back-btn:hover {
+      background: rgba(255,255,255,0.8);
+    }
+    p{
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card active" style="background: #e57373;">
+    <div class="circle">1</div>
+    <h2>Začiatok</h2>
+    <img src="image/1first.jpg" alt="Spomienka 1">
+    <p>Celý náš pribeh začal jednou správičkou na Boo 3.9.2024 o varení, a vtedy sme obaja ešte ani len netušili čo všetko bude nasledovať.❤️</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+  </div>
+
+  <div class="card" style="background: #64b5f6;">
+    <div class="circle">2</div>
+    <h2>Najprv "len" správičky.</h2>
+    <img src="image/2second.PNG" alt="Spomienka 2">
+    <p>No už len z nich bola vidieť tá neskutočne veľká láska od nás oboch, a každým dňom rástla aj keď sme si mysleli že už to ani nieje možné.🥹</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #ba68c8;">
+    <div class="circle">3</div>
+    <h2>Prvé stretnutie.</h2>
+    <img src="image/3third.jpg" alt="Spomienka 2">
+    <p>Vzpomínam si ako sme boli obaja nervózny a báli sme sa, keď si na to vzpomeniem tak sa čudujem že si mi neušla.😂</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #f48fb1;">
+    <div class="circle">4</div>
+    <h2>Prvá pusa.</h2>
+    <img src="image/4forth.jpeg" alt="Spomienka 2">
+    <p>Vzpomínam si na ňu, aj na prvé objatie, ako som sa cítil že nič lepšie ako láska k tebe nemôže byť, a teraz časom sa mi to len viac a viac potvrdzuje.🥰</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #4db6ac;">
+    <div class="circle">5</div>
+    <h2>Začiatky.</h2>
+    <img src="image/5fifth.jpeg" alt="Spomienka 2">
+    <p>Prechádzky alebo aj len sedenie na lavičke, všetky takéto obyčajné veci mi s tebou prišli milión krát krajšie, a stále to tak cítim k dnešnému dňu.🫂</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #ff8a65;">
+    <div class="circle">6</div>
+    <h2>Ladíme spolu.</h2>
+    <img src="image/6sixth.jpeg" alt="Spomienka 2">
+    <p>Vážim si každého objatia, pusinky, pozornosti aj darčeku ktorý mi dáš, či už gumička, tričko s tvojimi pusinkami alebo obáločky, to všetko má pre mňa najväčšiu hodnotu na svete lebo si mi to dala ty.🤗</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #7986cb;">
+    <div class="circle">7</div>
+    <h2>Naordeniny.</h2>
+    <img src="image/7seventh.JPG" alt="Spomienka 2">
+    <p>18te narodeniny sú veľká vec a ja som rád že som tam mohol byť s tebou, spoznať rodičov a blízkych, aj keď veľmi nervózny, s tebou som to zvládol a užil som si to.🥳</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #3a3c44;">
+    <div class="circle">8</div>
+    <h2>Každý deň po škole.</h2>
+    <img src="image/8eighth.jpg" alt="Spomienka 2">
+    <p>Aj keď nivy niesu dokonalé, ty si, a preto mi je s tebou dobre naozaj všade, už len keď sme sa nemohli nejaký deň stretnúť som bol celý nesvoj, bez tvojej prítomnosti ktorá mi dáva taký pokoj a nehu.</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #7986cb;">
+    <div class="circle">9</div>
+    <h2>Vibecheck.</h2>
+    <img src="image/9nineth.PNG" alt="Spomienka 2">
+    <p>😛🙂‍↔️😛🙂‍↔️ to milujem asi najviac, náš humor, ako sa vieme zabaviť a to je dôležité, aby bola zábava, aj vibechecky.</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #f06292;">
+    <div class="circle">10</div>
+    <h2>Prvý väčší víletík.</h2>
+    <img src="image/10tenth.jpeg" alt="Spomienka 2">
+    <p>Keď sme mohli objavovať nové miesta spoločne, s tebou bola tá prechádzka krásna.👩‍❤️‍💋‍👨</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #4fc3f7;">
+    <div class="circle">11</div>
+    <h2>Motokáry.</h2>
+    <img src="image/11eleventh.jpeg" alt="Spomienka 2">
+    <p>Aj na toto vzpomínam veľmi rád, keď sme si išli zajazdiť a mali spolu ďalší nový zažitok🏎️...aj s tvojou maminou.😂</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #aed581;">
+    <div class="circle">12</div>
+    <h2>Morava.</h2>
+    <img src="image/12twelth.JPG" alt="Spomienka 2">
+    <p>Asi najkrajších 5 dní v mojom živote bolo práve s tebou tam, víletiky, oddych aj opekanie, tak neskutočne som si to užil s tebou že som stále trochu smutný že sme tam neostali bývať.💍</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #ffb74d;">
+    <div class="circle">13</div>
+    <h2>Lednice🥶❄️.</h2>
+    <img src="image/14fourteenth.jpeg" alt="Spomienka 2">
+    <p>Zima tam síce nebola no ajtak nesklamali, a aspoň mám fotečky kde si aj ty aj zámok hehe.😆</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #81c784;">
+    <div class="circle">14</div>
+    <h2>Ohníky.</h2>
+    <img src="image/15fifteenth.JPG" alt="Spomienka 2">
+    <p>Neviem čo všetko život ešte prinesie no neskutočne rád by som ti splnil aj sen, a to že by sme mali takéto (inú farbu ale prosím) gtrko.🔥</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #9575cd;">
+    <div class="circle">15</div>
+    <h2>Slovakiaring.</h2>
+    <img src="image/16sixteenth.jpg" alt="Spomienka 2">
+    <p>Aj keď milujem závody nikdy som žiadny nevidel naživo, preto som nesmierne rád že sme takto spolu mohli zažiť niečo nové obaja. Niečo čo milujem, s človekom ktorého milujem najviac na svete, a verim že aj tebe sa páčilo.😍</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #66bb6a;">
+    <div class="circle">16</div>
+    <h2>Devín.</h2>
+    <img src="image/13thirtneenth.JPG" alt="Spomienka 2">
+    <p>No už len z nich bola vidieť tá neskutočne veľká láska od nás oboch, a každým dňom rástla aj keď sme si mysleli že už to ani nieje možné.</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #9b111e;">
+    <div class="circle">17</div>
+    <h2>Naše výročie 🎉</h2>
+    <p>Ešte raz naozaj ďakujem že si, že ťa mám zrovna ja a že mi dávaš toľko lásky každým dňom a ani si to neuvedomuješ, ako každý deň s tebou je o toľko lepši a krajší, a ako si mi za tento rok prirástla k srdcu, toto boli tie pre mňa najväčšie momentíky čo zaťial spolu máme a verím že mnoho ďaľších príde. ♥️</p>
+    <button onclick="nextCard()">Ďalšia spomienka</button>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+  <div class="card" style="background: #000000;">
+    <div class="circle">O</div>
+    <h2>Naša živá spomienka 📸</h2>
+    <video id="video" autoplay playsinline></video>
+    <button onclick="takePhoto()">Odfotiť</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <button class="back-btn" onclick="prevCard()">Späť</button>
+  </div>
+
+
+<script>
+  const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+
+  let current = 0;
+  const cards = Array.from(document.querySelectorAll('.card'));
+  let stream = null;
+
+  function startCamera() {
+    if (stream) return; // už beží
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(s => {
+        stream = s;
+        video.srcObject = stream;
+      })
+      .catch(err => console.error("Chyba kamery:", err));
+  }
+
+  function stopCamera() {
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      stream = null;
+    }
+  }
+
+  function takePhoto() {
+    if (!stream) return;
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    const newCard = document.createElement('div');
+    newCard.className = "card";
+    newCard.style.background = "#4db6ac";
+
+    newCard.innerHTML = `
+      <div class="circle">🌟</div>
+      <h2>Nová spomienka 📷</h2>
+      <img src="${canvas.toDataURL('image/png')}" alt="Naša fotka">
+      <p>Naživo vytvorená spomienka 💖</p>
+      <button onclick="restart()">Začať odznova</button>
+      <button class="back-btn" onclick="prevCard()">Späť</button>
+    `;
+
+    document.body.appendChild(newCard);
+    cards.push(newCard);
+
+    cards[current].classList.remove('active');
+    current = cards.length - 1;
+    newCard.classList.add('active');
+
+    stopCamera(); // kamera sa zastaví po odfotení
+  }
+
+  function nextCard() {
+    cards[current].classList.remove('active');
+    current = current + 1;
+    cards[current].classList.add('active');
+
+    if (cards[current].querySelector('#video')) {
+      startCamera();
+    } else {
+      stopCamera();
+    }
+  }
+
+  function prevCard() {
+    cards[current].classList.remove('active');
+    current = current - 1;
+    cards[current].classList.add('active');
+
+    if (cards[current].querySelector('#video')) {
+      startCamera();
+    } else {
+      stopCamera();
+    }
+  }
+
+  function restart() {
+    cards[current].classList.remove('active');
+    current = 0;
+    cards[current].classList.add('active');
+  }
+</script>
+</body>
+</html>
